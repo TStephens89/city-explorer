@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, Button } from 'react-bootstrap';
+import { Modal, Button, Container, Image } from 'react-bootstrap';
 
 
 class CityModal extends React.Component {
@@ -18,6 +18,12 @@ class CityModal extends React.Component {
             <Modal.Title>{this.props.location.display_name}</Modal.Title>
           </Modal.Header>
           <Modal.Body> The coodinates of : {this.props.location.display_name} is {this.props.location.lat}, {this.props.location.lon}
+          <Container>
+              <Image
+                style={{ width: '400px' }}
+                src={this.props.displayMap} />
+
+            </Container>
           </Modal.Body>
           <Modal.Footer>
             <Button variant="primary" onClick={this.props.handleClose}>
