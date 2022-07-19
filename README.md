@@ -22,3 +22,12 @@ day 1: Kyel Boisseau
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 # City Explorer
 
+Name of feature: ____trello____________________________
+
+Estimate of time needed to complete: ____didnt_
+
+Start time: __12pm___
+
+Finish time: _10 pm____
+
+Actual time needed to complete: __na___
