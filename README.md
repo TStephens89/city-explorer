@@ -19,6 +19,8 @@
 
 ## Credit and Collaborations
 day 1: Kyel Boisseau
+day 2: Lucy Gelderloos & TJ Parker
+
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 # City Explorer
 
@@ -31,5 +33,6 @@ Start time: __12pm___
 Finish time: _10 pm____
 
 Actual time needed to complete: __na___
+
 
 ![diagram](https://user-images.githubusercontent.com/104862689/179859660-829da1de-031b-4dbf-a6e9-b25597fce535.png)
