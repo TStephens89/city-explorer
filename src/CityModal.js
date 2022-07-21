@@ -1,6 +1,6 @@
 import React from 'react';
 import { Modal, Button, Container, Image } from 'react-bootstrap';
-
+import Weather from './components/weather';
 
 class CityModal extends React.Component {
   
@@ -18,6 +18,7 @@ class CityModal extends React.Component {
             <Modal.Title>{this.props.location.display_name}</Modal.Title>
           </Modal.Header>
           <Modal.Body> The coodinates of : {this.props.location.display_name} is {this.props.location.lat}, {this.props.location.lon}
+          <Weather/>
           <Container>
               <Image
                 style={{ width: '400px' }}

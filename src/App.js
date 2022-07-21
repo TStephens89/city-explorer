@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 // import { Modal, Button,} from 'react-bootstrap';
 import CityModal from './CityModal.js';
-
+import Weather from './components/weather.js';
 
 
 class App extends React.Component {
@@ -36,6 +36,7 @@ render() {
     <>
       <input onChange={(e) => this.setState({ searchQuery: e.target.value })} placeholder="search for a city"></input>
       <button onClick={this.getLocation}>Explore!</button>
+      
       <CityModal
         location={this.state.location}
         handleClose={this.handleClose}

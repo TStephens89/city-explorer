@@ -56,7 +56,7 @@ class Weather extends Component {
     console.log(this.state);
     return(
       <>
-      <h1>Weather Data!</h1>
+      <h3>Please retype the city name to view City Weather Data</h3>
         <form onSubmit={this.handleSubmit}>
           <input onChange={(e) => this.setState({ searchQuery: e.target.value })}/>
           <button>Explore!</button>
