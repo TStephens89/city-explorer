@@ -13,7 +13,8 @@ class App extends React.Component {
       location: {},
       show: false,
       displayMap: '',
-      errorPresent: false
+      errorPresent: false,
+      weather: null
 
     }
   }
@@ -30,22 +31,43 @@ class App extends React.Component {
   }
   handleClose = () => this.setState({ show: false });
 
+  getWeather = async () => {
+    let url = `${process.env.REACT_APP_SERVER}/weather?searchQuery=${this.state.searchQuery}`;
 
-render() {
-  return (
-    <>
-      <input onChange={(e) => this.setState({ searchQuery: e.target.value })} placeholder="search for a city"></input>
-      <button onClick={this.getLocation}>Explore!</button>
-      
-      <CityModal
-        location={this.state.location}
-        handleClose={this.handleClose}
-        showModal={this.state.show}
-        displayMap={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_CITY_KEY}&center=${this.state.location.lat},${this.state.location.lon}&zoom=12`}
-      />
+    try {
+
+      let response = await axios.get(url);
+      this.setState({
+        weather: response.data,
+      });
+
+    } catch (e) {
+      this.setState({ error: e });
+    }
+
+  }
+  handleClick = (e) => {
+    this.getLocation()
+    this.getWeather()
+  }
+  render() {
+    return (
+      <>
+        <input onChange={(e) => this.setState({ searchQuery: e.target.value })} placeholder="search for a city"></input>
+        <button onClick={this.handleClick}>Explore!</button>
+
+        <CityModal
+          location={this.state.location}
+          handleClose={this.handleClose}
+          showModal={this.state.show}
+          displayMap={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_CITY_KEY}&center=${this.state.location.lat},${this.state.location.lon}&zoom=12`}
+        />
+        {this.state.weather &&
+        <Weather
+        weather={this.state.weather}/>}
       </>
-  )
-}
+    )
+  }
 }
 
 export default App;
