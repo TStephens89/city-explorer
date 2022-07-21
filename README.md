@@ -36,3 +36,6 @@ Actual time needed to complete: __na___
 
 
 ![diagram](https://user-images.githubusercontent.com/104862689/179859660-829da1de-031b-4dbf-a6e9-b25597fce535.png)
+
+<img width="1522" alt="image" src="https://user-images.githubusercontent.com/104862689/180108140-ef60847c-d49f-4406-a062-5806f8cd7206.png">
+
