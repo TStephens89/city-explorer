@@ -1,5 +1,6 @@
 import { Component } from 'react';
-import axios from 'axios';
+import { ListGroup } from 'react-bootstrap';
+// import axios from 'axios';
 
 class Weather extends Component {
 
@@ -9,15 +10,16 @@ class Weather extends Component {
   render() {
     let weatherArray= this.props.weather.map(day => {
       return(
-        <>
-        <p>{day.date}</p>
-        <p>{day.description}</p>
-        </>
+        <ListGroup>
+        <ListGroup.Item>{day.date}</ListGroup.Item>
+        <ListGroup.Item>{day.description}</ListGroup.Item>
+        </ListGroup>
       )
     })
     console.log(this.state);
     return(
       <>
+      <h1>Weather Component</h1>
       {weatherArray}
       </>
     )

@@ -2,7 +2,8 @@ import React from 'react';
 import axios from 'axios';
 // import { Modal, Button,} from 'react-bootstrap';
 import CityModal from './CityModal.js';
-import Weather from './components/weather.js';
+import Weather from './components/Weather.js';
+import Movie from './components/Movie.js';
 
 
 class App extends React.Component {
@@ -14,7 +15,8 @@ class App extends React.Component {
       show: false,
       displayMap: '',
       errorPresent: false,
-      weather: null
+      weather: [],
+      movies: []
 
     }
   }
@@ -46,9 +48,25 @@ class App extends React.Component {
     }
 
   }
+  getMovies = async () => {
+    let url = `${process.env.REACT_APP_SERVER}/movies?query=${this.state.searchQuery}`;
+console.log(url)
+    try {
+
+      let response = await axios.get(url);
+      console.log(response.data)
+      this.setState({
+        movies: response.data,
+      });
+    } catch (e) {
+      this.setState({ error: e });
+    }
+
+  }
   handleClick = (e) => {
     this.getLocation()
     this.getWeather()
+    this.getMovies()
   }
   render() {
     return (
@@ -62,9 +80,12 @@ class App extends React.Component {
           showModal={this.state.show}
           displayMap={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_CITY_KEY}&center=${this.state.location.lat},${this.state.location.lon}&zoom=12`}
         />
-        {this.state.weather &&
+        {this.state.weather.length !== 0 &&
         <Weather
         weather={this.state.weather}/>}
+        {this.state.movies.length !== 0 &&
+        <Movie
+        movies={this.state.movies}/>}
       </>
     )
   }
