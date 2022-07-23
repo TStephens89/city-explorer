@@ -1,6 +1,5 @@
 import React from 'react';
 import { Modal, Button, Container, Image } from 'react-bootstrap';
-
 class CityModal extends React.Component {
   
 
@@ -23,6 +22,7 @@ class CityModal extends React.Component {
                 src={this.props.displayMap} />
 
             </Container>
+            <Container></Container>
           </Modal.Body>
           <Modal.Footer>
             <Button variant="primary" onClick={this.props.handleClose}>
