@@ -4,7 +4,7 @@ import axios from 'axios';
 import CityModal from './CityModal.js';
 import Weather from './components/Weather/Weather.js';
 import Movie from './components/movie/Movie.js';
-import WeatherDay from './components/Weather/WeatherDay';
+// import WeatherDay from './components/Weather/WeatherDay';
 
 class App extends React.Component {
   constructor(props) {
@@ -86,9 +86,7 @@ console.log(url)
         {this.state.movies.length !== 0 &&
         <Movie
         movies={this.state.movies}/>}
-        {this.state.weather.length !== 0 &&
-        <WeatherDay
-        dailyWeather={this.state.weather}/>}
+        
       </>
     )
   }

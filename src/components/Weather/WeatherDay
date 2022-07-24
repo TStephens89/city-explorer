@@ -1,25 +1,25 @@
-'use strict';
-import { Component } from 'react';
-import { ListGroup } from 'react-bootstrap';
-// import axios from 'axios';
+// 'use strict';
+// import { Component } from 'react';
+// import { ListGroup } from 'react-bootstrap';
+// // import axios from 'axios';
 
-class WeatherDay extends Component {
-  render() {
+// class WeatherDay extends Component {
+//   render() {
 
-    return (
-      <ListGroup>
+//     return (
+//       <ListGroup.Item>
       
-      </ListGroup>
-    )
-  }
-    console.log(this.state);
-  return(
-      <>
-  <h1>Weather Component < /h1>
-{ weatherArray }
-</>
-    )
-  }
+//       </ListGroup>
+//     )
+//   }
+//     console.log(this.state);
+//   return(
+//       <>
+//   <h1>Weather Component < /h1>
+// { weatherArray }
+// </>
+//     )
+//   }
 
 
-export default WeatherDay;
+// export default WeatherDay;
