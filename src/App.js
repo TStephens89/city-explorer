@@ -2,9 +2,9 @@ import React from 'react';
 import axios from 'axios';
 // import { Modal, Button,} from 'react-bootstrap';
 import CityModal from './CityModal.js';
-import Weather from './components/Weather.js';
-import Movie from './components/Movie.js';
-
+import Weather from './components/Weather/Weather.js';
+import Movie from './components/movie/Movie.js';
+// import WeatherDay from './components/Weather/WeatherDay';
 
 class App extends React.Component {
   constructor(props) {
@@ -86,6 +86,7 @@ console.log(url)
         {this.state.movies.length !== 0 &&
         <Movie
         movies={this.state.movies}/>}
+        
       </>
     )
   }
